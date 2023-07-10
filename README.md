@@ -4,6 +4,7 @@ Space black hole using JavaScript
 
 ## Technologies used
 
+* HTML
 
 
 ## Screenshots
