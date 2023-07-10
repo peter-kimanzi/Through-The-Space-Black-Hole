@@ -112,3 +112,6 @@ vec3 norm(vec3 p) {
 }
 
 
+void cam(inout vec3 p) {
+ 
+
