@@ -113,5 +113,17 @@ vec3 norm(vec3 p) {
 
 
 void cam(inout vec3 p) {
- 
+  if (P > 0) {
+
+    p.yz *= rot(-mouse.y*acos(-1.)+acos(.0));
+    p.xz *= rot(acos(-1.)-mouse.x*acos(-1.)*2.);
+
+  } else {
+
+    p.yz *= rot(sin(T*.5)*.25+.25);
+    p.xz *= rot(T*.25);
+    p.xy *= rot(sin(T*.5)*.25+.25);
+
+  }
+}
 
