@@ -154,3 +154,14 @@ void main(void) {
   cam(rd);
 
   vec3 p = ro;
+
+  const float steps = 400., maxd = 400.;
+  float dd = .0,
+  ii = .0,
+  at = .0;
+
+  for (float i = .0; i < steps; i++, ii = i) {
+    float d = map(p);
+
+
+
