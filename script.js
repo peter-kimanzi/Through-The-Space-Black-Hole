@@ -308,4 +308,7 @@ canvas.onpointermove = e => {
     if (!touching) return
     touches.set(e.pointerId, e)
 }
-
+canvas.onpointerup = e => {
+    touching = false
+    touches.clear()
+}
