@@ -224,6 +224,17 @@ function compile(shader, source) {
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
         console.error(gl.getShaderInfoLog(shader))
     }
+}
+
+function setup() {
+    const vs = gl.createShader(gl.VERTEX_SHADER)
+    const fs = gl.createShader(gl.FRAGMENT_SHADER)
+
+    program = gl.createProgram()
+
+    compile(vs, vertexSource)
+    compile(fs, fragmentSource)
+
 
 
 
