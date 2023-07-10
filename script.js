@@ -140,3 +140,17 @@ void light(inout vec3 col, in vec3 p, in vec3 rd, float fog, float side) {
 
   col += fog*tint*diff*fres*fade;
 }
+
+void main(void) {
+  vec2 uv = (
+    gl_FragCoord.xy-.5*resolution
+  )/min(resolution.x, resolution.y);
+
+  vec3 col = vec3(0),
+  ro = vec3(0, 0, (P > 0?.0: 2.*exp(-cos(T*.25))-2.)-6.5),
+  rd = normalize(vec3(uv, 1));
+
+  cam(ro);
+  cam(rd);
+
+  vec3 p = ro;
