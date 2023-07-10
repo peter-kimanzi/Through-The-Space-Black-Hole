@@ -235,6 +235,18 @@ function setup() {
     compile(vs, vertexSource)
     compile(fs, fragmentSource)
 
+    gl.attachShader(program, vs)
+    gl.attachShader(program, fs)
+    gl.linkProgram(program)
+
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        console.error(gl.getProgramInfoLog(program))
+    }
+
+    vertices = [-1.0, -1.0, 1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0]
+
+ esolution = gl.getUniformLocation(program, "resolution")
+}
 
 
 
