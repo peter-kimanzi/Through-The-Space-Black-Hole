@@ -298,4 +298,14 @@ function init() {
     loop(0)
 }
 
+document.body.onload = init
+window.onresize = resize
+canvas.onpointerdown = e => {
+    touching = true
+    touches.set(e.pointerId, e)
+}
+canvas.onpointermove = e => {
+    if (!touching) return
+    touches.set(e.pointerId, e)
+}
 
