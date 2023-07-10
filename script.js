@@ -163,5 +163,16 @@ void main(void) {
   for (float i = .0; i < steps; i++, ii = i) {
     float d = map(p);
 
+    if (d < 1e-3) {
+      break;
+    }
+    if (dd > maxd) {
+      dd = maxd;
+      break;
+    }
 
+    p += rd*d;
+    dd += d;
+    at += .075*(.075/dd);
+  }
 
