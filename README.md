@@ -2,6 +2,8 @@
 
 Space black hole using JavaScript
 
+## Technologies used
+
 
 
 ## Screenshots
