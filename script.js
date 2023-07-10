@@ -127,3 +127,16 @@ void cam(inout vec3 p) {
   }
 }
 
+void light(inout vec3 col, in vec3 p, in vec3 rd, float fog, float side) {
+  vec3 n = norm(p),
+  lp = vec3(0, -2, 3.*side-side*(S(.0, 1.,sin(T*.5)*.5+.5)*2.-1.)),
+  l = normalize(lp-p),
+  r = reflect(rd, n);
+
+  float
+  diff = clamp(dot(l, n),.0, 1.)*.5+.5,
+  fres = pow(S(.0, 1.,max(.0, dot(r, n))), 4.),
+  fade = (1./dot(p-lp, p-lp));
+
+  col += fog*tint*diff*fres*fade;
+}
