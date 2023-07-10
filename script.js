@@ -199,5 +199,15 @@ void main(void) {
   fragColor = vec4(col, 1);
 }
 `
+let time
+let buffer
+let program
+let touch
+let resolution
+let pointerCount
+let vertices = []
+let touching = false
+
+
 
 
