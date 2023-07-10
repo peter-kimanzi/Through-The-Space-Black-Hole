@@ -312,3 +312,7 @@ canvas.onpointerup = e => {
     touching = false
     touches.clear()
 }
+canvas.onpointerout = e => {
+    touching = false
+    touches.clear()
+}
