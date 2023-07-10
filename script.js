@@ -185,5 +185,19 @@ void main(void) {
 
   } else {
 
+    col += ii/400.;
+    col += pow(5.*at, 2.);
+    col += pow(col, vec3(3))*(S(.0, 1.,sin(T*.5)*.5+.5)*75.);
+
+    float c = S(1.,.0, S(.95,.9, (col.x+col.y+col.z)*.3));
+
+    col = mix(col, tint*.95, c);
+  }
+  
+  col += rnd(uv*T)*.25-(.2 * S(.0,1.,cos(ro.x*.5)*.5+.5));
+
+  fragColor = vec4(col, 1);
+}
+`
 
 
