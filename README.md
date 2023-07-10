@@ -6,6 +6,7 @@ Space black hole using JavaScript
 
 * HTML
 * CSS
+* JavaScript
 
 
 ## Screenshots
