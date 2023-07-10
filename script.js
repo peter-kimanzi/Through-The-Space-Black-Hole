@@ -176,3 +176,14 @@ void main(void) {
     at += .075*(.075/dd);
   }
 
+  if (mat == 1.) {
+
+    float fog = pow(S(1.,.0, dd/maxd), 4.);
+
+    light(col, p, rd, fog, 1.);
+    light(col, p, rd, fog, -1.);
+
+  } else {
+
+
+
